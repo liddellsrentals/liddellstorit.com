@@ -30,6 +30,11 @@ jobs:
       - name: Build site
         run: bun run build
 
+      - name: Prepare Pages artifact
+        run: |
+          cp public/CNAME out/CNAME
+          cp public/.nojekyll out/.nojekyll
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
