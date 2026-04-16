@@ -11,9 +11,9 @@ export function Footer() {
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
               A service of Liddell Stor All. Providing convenient portable storage solutions to Paragould, Arkansas and surrounding communities.
             </p>
-            <Link 
-              href="https://www.liddellstorall.com" 
-              target="_blank" 
+            <Link
+              href="https://www.liddellstorall.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors"
             >
@@ -25,8 +25,8 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-medium uppercase tracking-wide mb-4">Contact</h4>
             <div className="space-y-4">
-              <Link 
-                href="tel:8702369391" 
+              <Link
+                href="tel:8702369391"
                 className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
               >
                 <Phone className="h-4 w-4" />
@@ -42,33 +42,25 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-medium uppercase tracking-wide mb-4">Quick Links</h4>
             <div className="space-y-3">
-              <Link 
-                href="https://www.liddellstorall.com/pages/storit" 
-                target="_blank" 
+              <Link
+                href="https://www.liddellstorall.com/pages/storit"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
               >
                 Reserve a Container
               </Link>
-              <Link 
-                href="https://www.liddellstorall.com/storage-calculator" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
-              >
-                Storage Calculator
-              </Link>
-              <Link 
-                href="https://www.liddellstorall.com/about-us" 
-                target="_blank" 
+              <Link
+                href="https://www.liddellstorall.com/pages/about-us"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
               >
                 About Us
               </Link>
-              <Link 
-                href="https://www.liddellstorall.com/contact-us" 
-                target="_blank" 
+              <Link
+                href="https://www.liddellstorall.com/pages/contact"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
               >
