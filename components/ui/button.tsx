@@ -1,7 +1,10 @@
+"use client"
+
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
+import { trackInteraction } from '@/lib/analytics'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
@@ -41,17 +44,31 @@ function Button({
   variant,
   size,
   asChild = false,
+  onClick,
+  tracking,
   ...props
 }: React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
+  tracking?: {
+      interaction_type: 'link' | 'button'
+      interaction_text: string
+      interaction_location: string
+      link_url?: string
+    }
   }) {
   const Comp = asChild ? Slot : 'button'
+
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+    tracking && trackInteraction(tracking)
+    onClick?.(event)
+  }
 
   return (
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      onClick={handleClick}
       {...props}
     />
   )

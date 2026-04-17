@@ -31,7 +31,17 @@ export function Hero() {
             Need extra space? We deliver convenient, secure storage containers right to your location. Perfect for moving, renovation projects, or simply decluttering your home.
           </p>
           <div className="mt-10">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              tracking={{
+                interaction_type: 'link',
+                interaction_text: 'Reserve Now',
+                interaction_location: 'hero',
+                link_url: 'https://www.liddellstorall.com/pages/storit',
+              }}
+            >
               <Link href="https://www.liddellstorall.com/pages/storit" target="_blank" rel="noopener noreferrer">
                 Reserve Now
                 <ArrowRight className="ml-2 h-4 w-4" />

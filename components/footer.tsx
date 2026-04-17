@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import { Phone, MapPin, ExternalLink } from "lucide-react"
+import { trackInteraction } from "@/lib/analytics"
 
 export function Footer() {
   return (
@@ -16,6 +19,14 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors"
+              onClick={() =>
+                trackInteraction({
+                  interaction_type: 'link',
+                  interaction_text: 'Visit Liddell Stor All',
+                  interaction_location: 'footer',
+                  link_url: 'https://www.liddellstorall.com',
+                })
+              }
             >
               Visit Liddell Stor All
               <ExternalLink className="ml-2 h-4 w-4" />
@@ -28,6 +39,14 @@ export function Footer() {
               <Link
                 href="tel:8702369391"
                 className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                onClick={() =>
+                  trackInteraction({
+                    interaction_type: 'link',
+                    interaction_text: '(870) 236-9391',
+                    interaction_location: 'footer',
+                    link_url: 'tel:8702369391',
+                  })
+                }
               >
                 <Phone className="h-4 w-4" />
                 <span>(870) 236-9391</span>
@@ -47,6 +66,14 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                onClick={() =>
+                  trackInteraction({
+                    interaction_type: 'link',
+                    interaction_text: 'Reserve a Container',
+                    interaction_location: 'footer',
+                    link_url: 'https://www.liddellstorall.com/pages/storit',
+                  })
+                }
               >
                 Reserve a Container
               </Link>
@@ -55,6 +82,14 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                onClick={() =>
+                  trackInteraction({
+                    interaction_type: 'link',
+                    interaction_text: 'About Us',
+                    interaction_location: 'footer',
+                    link_url: 'https://www.liddellstorall.com/pages/about-us',
+                  })
+                }
               >
                 About Us
               </Link>
@@ -63,6 +98,14 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                onClick={() =>
+                  trackInteraction({
+                    interaction_type: 'link',
+                    interaction_text: 'Contact Us',
+                    interaction_location: 'footer',
+                    link_url: 'https://www.liddellstorall.com/pages/contact',
+                  })
+                }
               >
                 Contact Us
               </Link>

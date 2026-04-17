@@ -38,7 +38,17 @@ export function HowItWorks() {
               Getting a portable storage container is easy. We handle the heavy lifting so you can focus on what matters.
             </p>
             <div className="mt-10">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                tracking={{
+                  interaction_type: 'link',
+                  interaction_text: 'Reserve Your Container',
+                  interaction_location: 'how it works',
+                  link_url: 'https://www.liddellstorall.com/pages/storit',
+                }}
+              >
                 <Link href="https://www.liddellstorall.com/pages/storit" target="_blank" rel="noopener noreferrer">
                   Reserve Your Container
                   <ArrowRight className="ml-2 h-4 w-4" />

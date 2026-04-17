@@ -28,8 +28,8 @@ export default function RootLayout({
     <html lang="en" className="bg-background">
       <body className="font-sans antialiased">
         {children}
+        <GoogleAnalytics gaId="G-9TBFYF1TS8" />
       </body>
-      <GoogleAnalytics gaId="G-9TBFYF1TS8" />
     </html>
   )
 }
