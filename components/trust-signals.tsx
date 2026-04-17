@@ -5,7 +5,7 @@ export function TrustSignals() {
   return (
     <section className="py-24 bg-card">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-start">
           <div>
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Trust & credibility</p>
             <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground text-balance">
@@ -14,6 +14,10 @@ export function TrustSignals() {
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
               {siteConfig.name} is part of {siteConfig.parentName}, with a long local history in Paragould and a business model centered on straightforward service, clean operations, and responsive support.
             </p>
+
+            <div className="mt-6 inline-flex items-center rounded-full border border-border bg-background px-4 py-2 text-sm text-foreground">
+              Better Business Bureau A rating
+            </div>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
               {trustFacts.map((fact) => (

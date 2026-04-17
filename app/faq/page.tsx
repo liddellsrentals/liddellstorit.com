@@ -5,6 +5,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { faqItems, siteConfig } from '@/lib/site-content'
 import { RichText } from '@/components/rich-text'
+import { Breadcrumbs } from '@/components/breadcrumbs'
 
 const stripHtml = (value: string) => value.replace(/<[^>]+>/g, '')
 
@@ -33,6 +34,7 @@ export default function FaqPage() {
       <main className="pt-16">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
+            <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'FAQ', url: '/faq' }]} />
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">FAQ</p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-foreground text-balance">Portable storage questions, answered</h1>
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-2xl">

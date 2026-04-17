@@ -3,11 +3,19 @@ import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { siteConfig } from '@/lib/site-content'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { JsonLd } from '@/components/json-ld'
+import { buildPortableStorageProductSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Choosing the Right Container Size | Liddell Stor-It',
   description: 'Learn how to estimate the portable storage container size you need for a move, renovation, or business project.',
 }
+
+const updatedAt = '2026-04-17'
+
+const formatMonthYear = (value: string) =>
+  new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
 
 const sections = [
   {
@@ -31,8 +39,17 @@ export default function SizeGuidePage() {
       <main className="pt-16">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+            <Breadcrumbs
+              items={[
+                { name: 'Home', url: '/' },
+                { name: 'Guides', url: '/guides' },
+                { name: 'Choosing the Right Container Size', url: '/guides/choosing-the-right-container-size' },
+              ]}
+            />
+            <JsonLd data={buildPortableStorageProductSchema('https://liddellstorit.com/guides/choosing-the-right-container-size')} />
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Guide</p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-foreground text-balance">Choosing the right container size</h1>
+            <p className="mt-3 text-xs uppercase tracking-wide text-accent">Last updated: {formatMonthYear(updatedAt)}</p>
             <p className="mt-5 text-muted-foreground leading-relaxed">
               We only offer two container sizes, so the choice comes down to how much you are storing and whether you need extra room to load and move around.
             </p>

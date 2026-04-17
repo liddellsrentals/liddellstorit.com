@@ -36,6 +36,30 @@ export const siteConfig = {
     { day: 'Thursday', opens: '09:00', closes: '17:00' },
     { day: 'Friday', opens: '09:00', closes: '17:00' },
   ],
+  containerOffers: [
+    {
+      name: 'Portable Container (8 x 16 x 8)',
+      size: "8' x 16' x 8'",
+      monthlyRent: 195,
+      reservationDeposit: 50,
+      deliveryFee: 90,
+      pickupFee: 90,
+      relocationFee: 90,
+      availability: 'InStock',
+      description: 'Compact portable storage container for smaller moves, apartment loads, seasonal items, and a few rooms of furniture.',
+    },
+    {
+      name: 'Portable Container (8 x 20 x 8)',
+      size: "8' x 20' x 8'",
+      monthlyRent: 225,
+      reservationDeposit: 75,
+      deliveryFee: 90,
+      pickupFee: 90,
+      relocationFee: 90,
+      availability: 'InStock',
+      description: 'Larger portable storage container for whole-home moves, remodels, bulky furniture, and extra project room.',
+    },
+  ],
 } as const
 
 export const navLinks = [
@@ -50,16 +74,19 @@ export const guides = [
     slug: 'how-to-pack-a-storage-container',
     title: 'How to Pack a Storage Container',
     description: 'A practical packing order for keeping items safe, accessible, and organized during a move or renovation.',
+    updatedAt: '2026-04-17',
   },
   {
     slug: 'choosing-the-right-container-size',
     title: 'Choosing the Right Container Size',
     description: 'A simple way to estimate how much space you need for a home, apartment, or business project.',
+    updatedAt: '2026-04-17',
   },
   {
     slug: 'storage-container-pricing',
     title: 'Storage Container Pricing Explained',
     description: 'For up-to-date pricing, refer to our <a href="{{reserveUrl}}">Reservation Page</a>. This guide explains what affects portable storage pricing and how to compare quotes without surprises.',
+    updatedAt: '2026-04-17',
   },
 ] as const
 
@@ -189,4 +216,28 @@ export const trustFacts = [
   'A service of Liddell Stor All',
   'Owner has deep roots in the community and construction industry',
   'Serving North East Arkansas and surrounding communities since 2017',
+] as const
+
+export const testimonials = [
+  {
+    quote: 'Great place and great people... very friendly and go above and beyond to help you.',
+    name: 'Shawn S.',
+    location: 'Jonesboro, AR',
+    useCase: 'Personal Storage',
+    image: '/images/customers/shawn-s.png',
+  },
+  {
+    quote: 'They made my move easy, and they moved my stuff in a timely manner. Thanks Liddell StorAll!',
+    name: 'James O.',
+    location: 'Pocahontas, AR',
+    useCase: 'Local Move',
+    image: '/images/customers/john-o.jpg',
+  },
+  {
+    quote: 'Liddell Stor All’s staff is personal and professional. I’ve had such a smooth experience with them and have known my things are safe and secure.',
+    name: 'Hannah R.',
+    location: 'Benton, AR',
+    useCase: 'Personal Storage',
+    image: '/images/customers/hannah-r.png',
+  },
 ] as const

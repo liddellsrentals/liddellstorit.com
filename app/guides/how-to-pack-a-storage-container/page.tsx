@@ -3,11 +3,19 @@ import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { siteConfig } from '@/lib/site-content'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { JsonLd } from '@/components/json-ld'
+import { buildPortableStorageProductSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'How to Pack a Storage Container | Liddell Stor-It',
   description: 'Step-by-step guidance for packing a portable storage container safely and efficiently.',
 }
+
+const updatedAt = '2026-04-17'
+
+const formatMonthYear = (value: string) =>
+  new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
 
 const steps = [
   'Start with the heaviest items on the floor and toward the back of the container.',
@@ -24,8 +32,17 @@ export default function PackingGuidePage() {
       <main className="pt-16">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+            <Breadcrumbs
+              items={[
+                { name: 'Home', url: '/' },
+                { name: 'Guides', url: '/guides' },
+                { name: 'How to Pack a Storage Container', url: '/guides/how-to-pack-a-storage-container' },
+              ]}
+            />
+            <JsonLd data={buildPortableStorageProductSchema('https://liddellstorit.com/guides/how-to-pack-a-storage-container')} />
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Guide</p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-foreground text-balance">How to pack a storage container</h1>
+            <p className="mt-3 text-xs uppercase tracking-wide text-accent">Last updated: {formatMonthYear(updatedAt)}</p>
             <p className="mt-5 text-muted-foreground leading-relaxed">
               Good packing keeps items safe and makes the container easier to use. The goal is to stack securely, protect fragile belongings, and preserve access to the things you may need first.
             </p>

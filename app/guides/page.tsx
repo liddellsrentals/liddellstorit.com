@@ -5,6 +5,10 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { guides, siteConfig } from '@/lib/site-content'
 import { RichText } from '@/components/rich-text'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+
+const formatMonthYear = (value: string) =>
+  new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
 
 export const metadata: Metadata = {
   title: 'Storage Guides | Liddell Stor-It',
@@ -18,6 +22,7 @@ export default function GuidesPage() {
       <main className="pt-16">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
+            <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Guides', url: '/guides' }]} />
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Guides</p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-foreground text-balance">Practical storage advice</h1>
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-2xl">
@@ -30,6 +35,9 @@ export default function GuidesPage() {
                   <h2 className="text-xl font-medium text-foreground">{guide.title}</h2>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground [&_a]:text-accent [&_a]:hover:text-accent/80 [&_a]:transition-colors">
                     <RichText html={guide.description} />
+                  </p>
+                  <p className="mt-4 text-xs uppercase tracking-wide text-accent">
+                    Updated {formatMonthYear(guide.updatedAt)}
                   </p>
                   <span className="mt-4 inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors">
                     Read guide

@@ -3,11 +3,22 @@ import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { siteConfig } from '@/lib/site-content'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { JsonLd } from '@/components/json-ld'
+import { buildPortableStorageProductSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Storage Container Pricing | Liddell Stor-It',
   description: 'What affects portable storage container pricing and how to compare quotes with confidence.',
 }
+
+const updatedAt = '2026-04-17'
+
+const formatMonthYear = (value: string) =>
+  new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
+
+const formatCurrency = (value: number) =>
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
 
 const pricingFactors = [
   'Container size - We currently offer 2 sizes: 8\' x 16\' x 8\' and 8\' x 20\' x 8\'',
@@ -23,11 +34,32 @@ export default function PricingGuidePage() {
       <main className="pt-16">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+            <Breadcrumbs
+              items={[
+                { name: 'Home', url: '/' },
+                { name: 'Guides', url: '/guides' },
+                { name: 'Storage Container Pricing', url: '/guides/storage-container-pricing' },
+              ]}
+            />
+            <JsonLd data={buildPortableStorageProductSchema('https://liddellstorit.com/guides/storage-container-pricing')} />
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Guide</p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-foreground text-balance">Storage container pricing explained</h1>
+            <p className="mt-3 text-xs uppercase tracking-wide text-accent">Last updated: {formatMonthYear(updatedAt)}</p>
             <p className="mt-5 text-muted-foreground leading-relaxed">
               We strive to be competitive and transparent with our pricing. There are a variety of factors that contribute to pricing. Refer to our <Link href={siteConfig.reserveUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">Reservation Page</Link> for the most up-to-date pricing.
             </p>
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              {siteConfig.containerOffers.map((offer) => (
+                <article key={offer.name} className="rounded-lg border border-border bg-card p-6">
+                  <h2 className="text-lg font-medium text-foreground">{offer.name}</h2>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{offer.description}</p>
+                  <p className="mt-4 text-2xl font-medium text-foreground">{formatCurrency(offer.monthlyRent)} / month</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Reservation deposit: {formatCurrency(offer.reservationDeposit)}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Within 20 miles: {formatCurrency(offer.deliveryFee)} delivery, {formatCurrency(offer.pickupFee)} pickup, {formatCurrency(offer.relocationFee)} relocation</p>
+                </article>
+              ))}
+            </div>
 
             <div className="mt-10 grid gap-4">
               {pricingFactors.map((factor) => (

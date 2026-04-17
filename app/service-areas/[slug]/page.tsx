@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { serviceAreas, siteConfig } from '@/lib/site-content'
+import { Breadcrumbs } from '@/components/breadcrumbs'
+import { JsonLd } from '@/components/json-ld'
+import { buildPortableStorageProductSchema } from '@/lib/seo'
 
 type ServiceAreaPageProps = {
   params: Promise<{
@@ -55,6 +58,14 @@ export default async function ServiceAreaPage({ params }: ServiceAreaPageProps) 
       <main className="pt-16">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 lg:px-8 max-w-3xl">
+            <Breadcrumbs
+              items={[
+                { name: 'Home', url: '/' },
+                { name: 'Service Areas', url: '/service-areas' },
+                { name: serviceArea.title, url: `/service-areas/${serviceArea.slug}/` },
+              ]}
+            />
+            <JsonLd data={buildPortableStorageProductSchema(`https://liddellstorit.com/service-areas/${serviceArea.slug}/`)} />
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Service area</p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-foreground text-balance">{serviceArea.title}</h1>
             <p className="mt-5 text-muted-foreground leading-relaxed">

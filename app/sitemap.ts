@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...guides.map((guide) => ({
       url: `${siteConfig.url}/guides/${guide.slug}`,
-      lastModified: now,
+      lastModified: new Date(guide.updatedAt),
     })),
     {
       url: `${siteConfig.url}/service-areas`,
