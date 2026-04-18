@@ -16,7 +16,7 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/30" />
       </div>
-      
+
       <div className="relative z-10 container mx-auto px-6 py-24 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-accent font-medium tracking-wide uppercase text-sm mb-4">
@@ -37,13 +37,13 @@ export function Hero() {
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
               tracking={{
                 interaction_type: 'link',
-                interaction_text: 'Reserve Now',
+                interaction_text: 'See Pricing and Availability',
                 interaction_location: 'hero',
                 link_url: 'https://www.liddellstorall.com/pages/storit',
               }}
             >
               <Link href="https://www.liddellstorall.com/pages/storit" target="_blank" rel="noopener noreferrer">
-                Reserve Now
+                See Pricing and Availability
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
