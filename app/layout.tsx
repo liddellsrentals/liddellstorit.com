@@ -8,7 +8,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Liddell Stor-It | Portable Storage Containers in Paragould, AR (Greene County)',
+  title: 'Liddell Stor-It | Northeast Arkansas Portable Storage Delivered to You',
   description: 'Convenient portable storage containers delivered to your location in Paragould, Arkansas. Perfect for moving, renovation, or extra storage needs.',
   generator: 'v0.app',
   metadataBase: new URL(siteConfig.url),
