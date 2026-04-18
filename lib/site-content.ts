@@ -442,9 +442,9 @@ export const faqItems = [
 
 export const trustFacts = [
   'Local business located in Paragould, Arkansas',
-  'A service of Liddell Stor All',
   'Owner has deep roots in the community and construction industry',
   'Serving North East Arkansas and surrounding communities since 2017',
+  'Inspecting and cleaning containers before delivery',
 ] as const
 
 export const testimonials = [

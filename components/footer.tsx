@@ -105,6 +105,20 @@ export function Footer() {
               >
                 Reserve a Container
               </Link>
+              <Link
+                href="/container-quality-standards"
+                className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                onClick={() =>
+                  trackInteraction({
+                    interaction_type: 'link',
+                    interaction_text: 'Container Quality Standards',
+                    interaction_location: 'footer',
+                    link_url: '/container-quality-standards',
+                  })
+                }
+              >
+                Container Quality Standards
+              </Link>
             </div>
           </div>
         </div>

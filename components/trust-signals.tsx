@@ -12,7 +12,7 @@ export function TrustSignals() {
               Local service backed by real community roots
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl">
-              {siteConfig.name} is part of {siteConfig.parentName}, with a long local history in Paragould and a business model centered on straightforward service, clean operations, and responsive support.
+              {siteConfig.name} is part of {siteConfig.parentName}, with a long local history in Paragould and a business model centered on quality standards, clean operations, and responsive support.
             </p>
 
             <div className="mt-6 inline-flex items-center rounded-full border border-border bg-background px-4 py-2 text-sm text-foreground">

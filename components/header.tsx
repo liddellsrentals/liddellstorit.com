@@ -89,6 +89,22 @@ export function Header({ variant = "overlay" }: HeaderProps) {
             <Button
               asChild
               size="sm"
+              variant="outline"
+              className="border-primary-foreground/25 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
+              tracking={{
+                interaction_type: 'link',
+                interaction_text: 'Call Us',
+                interaction_location: 'header desktop',
+                link_url: `tel:${siteConfig.phone}`,
+              }}
+            >
+              <Link href={`tel:${siteConfig.phone}`}>
+                Call Us
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="sm"
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
               tracking={{
                 interaction_type: 'link',
@@ -174,6 +190,22 @@ export function Header({ variant = "overlay" }: HeaderProps) {
                 How It Works
               </Link>
               <div className="flex flex-col gap-2 pt-4 border-t border-primary-foreground/20">
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="border-primary-foreground/25 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 w-full"
+                  tracking={{
+                    interaction_type: 'link',
+                    interaction_text: 'Call Us',
+                    interaction_location: 'header mobile',
+                    link_url: `tel:${siteConfig.phone}`,
+                  }}
+                >
+                  <Link href={`tel:${siteConfig.phone}`}>
+                    Call Us
+                  </Link>
+                </Button>
                 <Button
                   asChild
                   size="sm"

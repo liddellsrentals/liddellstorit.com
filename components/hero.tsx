@@ -28,7 +28,7 @@ export function Hero() {
             <span className="font-normal">Delivered to You</span>
           </h1>
           <p className="hidden sm:block mt-6 text-lg text-primary-foreground/80 leading-relaxed max-w-xl">
-            Need extra space? We deliver convenient, secure storage containers right to your location. Perfect for moving, renovation projects, or simply decluttering your home.
+            Need extra space? We deliver convenient, secure storage containers right to your location. Every unit is maintained to high quality standards and cleaned with care before it reaches you.
           </p>
           <div className="mt-10">
             <Button

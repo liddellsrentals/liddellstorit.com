@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: freshnessDate,
     },
     {
+      url: `${siteConfig.url}/container-quality-standards`,
+      lastModified: freshnessDate,
+    },
+    {
       url: `${siteConfig.url}/guides`,
       lastModified: freshnessDate,
     },

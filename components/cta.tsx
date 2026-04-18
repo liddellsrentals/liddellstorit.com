@@ -11,7 +11,7 @@ export function CTA() {
             Ready to Get Started?
           </h2>
           <p className="mt-4 text-primary-foreground/80 leading-relaxed">
-            Reserve your portable storage container today. We serve Paragould, Arkansas and the surrounding areas.
+            Reserve your portable storage container today. We serve Paragould, Arkansas and the surrounding areas with clean, inspected containers built for a top-notch experience.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button
