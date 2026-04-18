@@ -68,7 +68,7 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section className="py-24 bg-muted">
+    <section className="py-24 bg-card">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">

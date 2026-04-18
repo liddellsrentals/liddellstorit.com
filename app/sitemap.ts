@@ -20,6 +20,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: freshnessDate,
     },
     {
+      url: `${siteConfig.url}/storage-demo`,
+      lastModified: freshnessDate,
+    },
+    {
       url: `${siteConfig.url}/guides`,
       lastModified: freshnessDate,
     },
