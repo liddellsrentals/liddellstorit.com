@@ -3,10 +3,13 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { serviceAreas } from '@/lib/site-content'
+import { contentFreshnessDate, serviceAreas } from '@/lib/site-content'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { JsonLd } from '@/components/json-ld'
 import { buildPortableStorageProductSchema } from '@/lib/seo'
+
+const formatMonthYear = (value: string) =>
+  new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
 
 export const metadata: Metadata = {
   title: 'Service Areas | Liddell Stor-It',
@@ -27,6 +30,7 @@ export default function ServiceAreasPage() {
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-2xl">
               We focus on local delivery and support so customers can get storage containers across the Mid-South and Northeast Arkansas without unnecessary friction.
             </p>
+            <p className="mt-3 text-xs uppercase tracking-wide text-accent">Updated {formatMonthYear(contentFreshnessDate)}</p>
 
             <div className="mt-12 grid md:grid-cols-2 gap-6">
               {serviceAreas.map((area) => (

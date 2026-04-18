@@ -3,11 +3,14 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { faqItems, siteConfig } from '@/lib/site-content'
+import { contentFreshnessDate, faqItems, siteConfig } from '@/lib/site-content'
 import { RichText } from '@/components/rich-text'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 
 const stripHtml = (value: string) => value.replace(/<[^>]+>/g, '')
+
+const formatMonthYear = (value: string) =>
+  new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
 
 export const metadata: Metadata = {
   title: 'FAQ | Liddell Stor-It',
@@ -40,6 +43,7 @@ export default function FaqPage() {
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-2xl">
               Common questions about container sizes, pricing, delivery, and rental terms for {siteConfig.name}.
             </p>
+            <p className="mt-3 text-xs uppercase tracking-wide text-accent">Updated {formatMonthYear(contentFreshnessDate)}</p>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

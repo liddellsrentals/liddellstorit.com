@@ -3,12 +3,14 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { guides, siteConfig } from '@/lib/site-content'
+import { contentFreshnessDate, guides, siteConfig } from '@/lib/site-content'
 import { RichText } from '@/components/rich-text'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 
 const formatMonthYear = (value: string) =>
   new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
+
+const updatedAt = contentFreshnessDate
 
 export const metadata: Metadata = {
   title: 'Storage Guides | Liddell Stor-It',
@@ -28,6 +30,7 @@ export default function GuidesPage() {
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-2xl">
               Short, useful guides to help customers plan a move, estimate storage space, and understand rental pricing before they reserve.
             </p>
+            <p className="mt-3 text-xs uppercase tracking-wide text-accent">Updated {formatMonthYear(updatedAt)}</p>
 
             <div className="mt-12 grid md:grid-cols-2 gap-6">
               {guides.map((guide) => (

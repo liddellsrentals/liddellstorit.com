@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { serviceAreas, siteConfig } from '@/lib/site-content'
+import { contentFreshnessDate, serviceAreas, siteConfig } from '@/lib/site-content'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { JsonLd } from '@/components/json-ld'
 import { buildPortableStorageProductSchema } from '@/lib/seo'
@@ -16,6 +16,9 @@ type ServiceAreaPageProps = {
 
 export const dynamic = 'force-static'
 export const dynamicParams = false
+
+const formatMonthYear = (value: string) =>
+  new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
 
 function getServiceArea(slug: string) {
   return serviceAreas.find((area) => area.slug === slug)
@@ -71,6 +74,7 @@ export default async function ServiceAreaPage({ params }: ServiceAreaPageProps) 
             <p className="mt-5 text-muted-foreground leading-relaxed">
               {serviceArea.description}
             </p>
+            <p className="mt-3 text-xs uppercase tracking-wide text-accent">Updated {formatMonthYear(contentFreshnessDate)}</p>
             <div className="mt-10 space-y-4 text-sm leading-relaxed text-foreground">
               <p>Portable storage keeps the container close to your project, whether you are moving, clearing space for a remodel, or managing business overflow.</p>
               <p>Delivery and pickup are scheduled around your timeline, and our team can help you choose the right container for the job.</p>

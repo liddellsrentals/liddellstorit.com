@@ -62,6 +62,8 @@ export const siteConfig = {
   ],
 } as const
 
+export const contentFreshnessDate = '2026-04-17'
+
 export const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/guides', label: 'Guides' },
@@ -86,6 +88,78 @@ export const guides = [
     slug: 'storage-container-pricing',
     title: 'Storage Container Pricing Explained',
     description: 'For up-to-date pricing, refer to our <a href="{{reserveUrl}}">Reservation Page</a>. This guide explains what affects portable storage pricing and how to compare quotes without surprises.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'moving-tips',
+    title: 'Moving Tips',
+    description: 'A practical moving pillar page with timeline advice, packing priorities, and ways to stay organized before moving day.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'home-organization',
+    title: 'Home Organization',
+    description: 'Ideas for decluttering, seasonal storage, and getting rooms back under control without feeling overwhelmed.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'renovation-planning',
+    title: 'Renovation Planning',
+    description: 'Advice for staging rooms, protecting furniture, and planning storage around remodel timelines.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'moving-tips/move-day-checklist',
+    title: 'Move-Day Checklist',
+    description: 'A simple checklist for the last 24 hours before moving day so nothing gets missed.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'moving-tips/how-to-pack-fragile-items',
+    title: 'How to Pack Fragile Items',
+    description: 'A practical guide to wrapping, labeling, and loading breakables so they stay protected.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'moving-tips/how-to-load-a-storage-container',
+    title: 'How to Load a Storage Container',
+    description: 'Tips for stacking heavier items first, keeping weight balanced, and leaving room where needed.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'home-organization/decluttering-by-room',
+    title: 'Decluttering by Room',
+    description: 'A room-by-room approach to clearing clutter without trying to organize the whole house at once.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'home-organization/garage-organization',
+    title: 'Garage Organization',
+    description: 'How to make garage space more usable with better sorting, storage, and seasonal rotation.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'home-organization/seasonal-storage',
+    title: 'Seasonal Storage',
+    description: 'A guide to storing holiday decor, patio gear, and off-season items without creating clutter.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'renovation-planning/pre-renovation-timeline',
+    title: 'Pre-Renovation Timeline',
+    description: 'A planning timeline that helps you clear rooms and reserve storage before remodeling starts.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'renovation-planning/how-to-protect-furniture-during-remodel',
+    title: 'How to Protect Furniture During a Remodel',
+    description: 'Steps for keeping furniture clean, safe, and out of the work zone during renovation projects.',
+    updatedAt: '2026-04-17',
+  },
+  {
+    slug: 'renovation-planning/contractor-staging-plan',
+    title: 'Contractor Staging Plan',
+    description: 'How to stage rooms so contractors can move efficiently and the project stays organized.',
     updatedAt: '2026-04-17',
   },
 ] as const
@@ -150,6 +224,161 @@ export const serviceAreas = [
     slug: 'poplar-bluff-mo',
     title: 'Poplar Bluff, MO (Butler County)',
     description: 'Portable storage delivery for moves, renovations, and business storage projects in Poplar Bluff.',
+  },
+  {
+    slug: 'bono-ar',
+    title: 'Bono, AR (Craighead County)',
+    description: 'Portable storage for moves, renovations, and cleanup projects in Bono and nearby Craighead County areas.',
+  },
+  {
+    slug: 'brookland-ar',
+    title: 'Brookland, AR (Craighead County)',
+    description: 'Local portable storage delivery for homes and projects in Brookland.',
+  },
+  {
+    slug: 'marmaduke-ar',
+    title: 'Marmaduke, AR (Greene County)',
+    description: 'Portable storage for moves and remodels in Marmaduke and surrounding Greene County communities.',
+  },
+  {
+    slug: 'rector-ar',
+    title: 'Rector, AR (Clay County)',
+    description: 'Portable storage delivery for household and business projects in Rector.',
+  },
+  {
+    slug: 'piggott-ar',
+    title: 'Piggott, AR (Clay County)',
+    description: 'Portable storage options for moves, storage overflow, and renovation projects in Piggott.',
+  },
+  {
+    slug: 'delaplaine-ar',
+    title: 'Delaplaine, AR (Greene County)',
+    description: 'Convenient container delivery for homes and projects in Delaplaine.',
+  },
+  {
+    slug: 'walnut-ridge-ar',
+    title: 'Walnut Ridge, AR (Lawrence County)',
+    description: 'Portable storage delivery for moves, cleanouts, and remodels in Walnut Ridge.',
+  },
+  {
+    slug: 'pocahontas-ar',
+    title: 'Pocahontas, AR (Randolph County)',
+    description: 'Portable storage for homeowners, contractors, and businesses in Pocahontas.',
+  },
+  {
+    slug: 'swifton-ar',
+    title: 'Swifton, AR (Jackson County)',
+    description: 'Container delivery for short-term moves, renovations, and extra storage in Swifton.',
+  },
+  {
+    slug: 'cash-ar',
+    title: 'Cash, AR (Craighead County)',
+    description: 'Portable storage delivery for household projects and renovations in Cash.',
+  },
+  {
+    slug: 'harrisburg-ar',
+    title: 'Harrisburg, AR (Poinsett County)',
+    description: 'Portable storage support for moves, storage overflow, and cleanup projects in Harrisburg.',
+  },
+  {
+    slug: 'trumann-ar',
+    title: 'Trumann, AR (Poinsett County)',
+    description: 'Portable storage delivery for homes and businesses in Trumann.',
+  },
+  {
+    slug: 'lake-city-ar',
+    title: 'Lake City, AR (Craighead County)',
+    description: 'Portable container delivery for projects in Lake City and nearby areas.',
+  },
+  {
+    slug: 'monette-ar',
+    title: 'Monette, AR (Craighead County)',
+    description: 'Portable storage for moves, remodels, and extra space in Monette.',
+  },
+  {
+    slug: 'leachville-ar',
+    title: 'Leachville, AR (Mississippi County)',
+    description: 'Portable storage options for Leachville homes, remodels, and business projects.',
+  },
+  {
+    slug: 'cardwell-mo',
+    title: 'Cardwell, MO (Dunklin County)',
+    description: 'Convenient portable storage delivery for projects in Cardwell.',
+  },
+  {
+    slug: 'lepanto-ar',
+    title: 'Lepanto, AR (Poinsett County)',
+    description: 'Portable storage for moves, renovations, and cleanup jobs in Lepanto.',
+  },
+  {
+    slug: 'marked-tree-ar',
+    title: 'Marked Tree, AR (Poinsett County)',
+    description: 'Local container delivery for homes and businesses in Marked Tree.',
+  },
+  {
+    slug: 'senath-mo',
+    title: 'Senath, MO (Dunklin County)',
+    description: 'Portable storage delivery for moving and remodeling projects in Senath.',
+  },
+  {
+    slug: 'kennett-mo',
+    title: 'Kennett, MO (Dunklin County)',
+    description: 'Portable storage for residential and commercial projects in Kennett.',
+  },
+  {
+    slug: 'holcomb-mo',
+    title: 'Holcomb, MO (Dunklin County)',
+    description: 'Portable storage delivery for moves, cleanouts, and renovation projects in Holcomb.',
+  },
+  {
+    slug: 'dexter-mo',
+    title: 'Dexter, MO (Stoddard County)',
+    description: 'Portable storage options for homes and businesses in Dexter.',
+  },
+  {
+    slug: 'highland-ar',
+    title: 'Highland, AR (Sharp County)',
+    description: 'Convenient portable storage for projects in Highland and nearby Sharp County areas.',
+  },
+  {
+    slug: 'ash-flat-ar',
+    title: 'Ash Flat, AR (Sharp County)',
+    description: 'Portable storage delivery for moves and remodels in Ash Flat.',
+  },
+  {
+    slug: 'maynard-ar',
+    title: 'Maynard, AR (Randolph County)',
+    description: 'Portable storage for residential and business projects in Maynard.',
+  },
+  {
+    slug: 'corning-ar',
+    title: 'Corning, AR (Clay County)',
+    description: 'Portable storage delivery for moves, renovation jobs, and cleanup projects in Corning.',
+  },
+  {
+    slug: 'imboden-ar',
+    title: 'Imboden, AR (Lawrence County)',
+    description: 'Portable storage options for homes and projects in Imboden.',
+  },
+  {
+    slug: 'batesville-ar',
+    title: 'Batesville, AR (Independence County)',
+    description: 'Portable storage delivery for moves, remodels, and storage overflow in Batesville.',
+  },
+  {
+    slug: 'bald-knob-ar',
+    title: 'Bald Knob, AR (White County)',
+    description: 'Portable storage for household and business projects in Bald Knob.',
+  },
+  {
+    slug: 'searcy-ar',
+    title: 'Searcy, AR (White County)',
+    description: 'Portable storage delivery for homes and commercial projects in Searcy.',
+  },
+  {
+    slug: 'newport-ar',
+    title: 'Newport, AR (Jackson County)',
+    description: 'Portable storage options for projects in Newport and the surrounding area.',
   },
 ] as const
 

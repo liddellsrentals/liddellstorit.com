@@ -5,6 +5,8 @@ import { RichText } from '@/components/rich-text'
 
 export function ResourceLinks() {
   const featuredServiceAreas = serviceAreas.slice(0, 5)
+  const coreGuides = guides.slice(0, 3)
+  const pillarGuides = guides.slice(3, 6)
 
   return (
     <section className="py-24 bg-muted">
@@ -13,7 +15,23 @@ export function ResourceLinks() {
           <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Guides</p>
           <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground text-balance">Helpful storage advice</h2>
           <div className="mt-8 space-y-4">
-            {guides.map((guide) => (
+            {coreGuides.map((guide) => (
+              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="block rounded-lg border border-border bg-card p-5 hover:shadow-sm transition-shadow">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-medium text-foreground">{guide.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed [&_a]:text-accent [&_a]:hover:text-accent/80 [&_a]:transition-colors">
+                      <RichText html={guide.description} />
+                    </p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-accent shrink-0" />
+                </div>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-8 text-sm uppercase tracking-wide text-accent font-medium">Pillar pages</p>
+          <div className="mt-4 space-y-4">
+            {pillarGuides.map((guide) => (
               <Link key={guide.slug} href={`/guides/${guide.slug}`} className="block rounded-lg border border-border bg-card p-5 hover:shadow-sm transition-shadow">
                 <div className="flex items-center justify-between gap-4">
                   <div>

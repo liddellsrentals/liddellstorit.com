@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { siteConfig } from '@/lib/site-content'
+import { contentFreshnessDate, siteConfig } from '@/lib/site-content'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { JsonLd } from '@/components/json-ld'
 import { buildPortableStorageProductSchema } from '@/lib/seo'
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'What affects portable storage container pricing and how to compare quotes with confidence.',
 }
 
-const updatedAt = '2026-04-17'
+const updatedAt = contentFreshnessDate
 
 const formatMonthYear = (value: string) =>
   new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
@@ -21,10 +21,31 @@ const formatCurrency = (value: number) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
 
 const pricingFactors = [
-  'Container size - We currently offer 2 sizes: 8\' x 16\' x 8\' and 8\' x 20\' x 8\'',
-  'Rental duration - Containers can be rented in 1 month increments, however we can drop off, pickup, and relocate the container at any time',
-  'Delivery and pickup distance - If the Pick Up or Delivery distance is within 20 miles of the office, delivery travel fees are complementary. Please contact our office for a quote if travel distance is greater.',
-  'Relocation - We offer container relocation as a service.',
+  {
+    question: 'What affects portable storage pricing?',
+    answer: 'Pricing mainly depends on container size, rental duration, delivery distance, and whether you need relocation.',
+    detail: 'Those are the main variables to compare when you are looking at quotes, so ask for a breakdown instead of one lump sum number.',
+  },
+  {
+    question: 'How does container size change the price?',
+    answer: 'We currently offer 2 sizes: 8\' x 16\' x 8\' and 8\' x 20\' x 8\'.',
+    detail: 'The larger container usually costs more because it gives you more space for whole-home moves, remodels, and bulky furniture.',
+  },
+  {
+    question: 'Why does rental length matter?',
+    answer: 'Containers can be rented in 1 month increments, and the total cost changes with how long you keep it.',
+    detail: 'A shorter move and a longer renovation do not use storage in the same way, so the rental period is one of the easiest things to compare.',
+  },
+  {
+    question: 'What should you ask about delivery and pickup?',
+    answer: 'If the pickup or delivery distance is within 20 miles of the office, travel fees are complementary.',
+    detail: 'For longer distances, ask for a separate line item so you can compare travel charges against other portable storage options.',
+  },
+  {
+    question: 'Can the container be moved again later?',
+    answer: 'Yes, we offer container relocation as a service.',
+    detail: 'That is useful when your project changes or you need the container at a second location during the rental period.',
+  },
 ]
 
 export default function PricingGuidePage() {
@@ -45,9 +66,9 @@ export default function PricingGuidePage() {
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Guide</p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-foreground text-balance">Storage container pricing explained</h1>
             <p className="mt-3 text-xs uppercase tracking-wide text-accent">Last updated: {formatMonthYear(updatedAt)}</p>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
-              We strive to be competitive and transparent with our pricing. There are a variety of factors that contribute to pricing. Refer to our <Link href={siteConfig.reserveUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">Reservation Page</Link> for the most up-to-date pricing.
-            </p>
+              <p className="mt-5 text-muted-foreground leading-relaxed">
+                We strive to be competitive and transparent with our pricing. There are a variety of factors that contribute to pricing. Refer to our <Link href={siteConfig.reserveUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">Reservation Page</Link> for the most up-to-date pricing.
+              </p>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {siteConfig.containerOffers.map((offer) => (
@@ -63,9 +84,11 @@ export default function PricingGuidePage() {
 
             <div className="mt-10 grid gap-4">
               {pricingFactors.map((factor) => (
-                <div key={factor} className="rounded-lg border border-border bg-card p-5 text-sm text-foreground">
-                  {factor}
-                </div>
+                <article key={factor.question} className="rounded-lg border border-border bg-card p-5">
+                  <h2 className="text-lg font-medium text-foreground">{factor.question}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground">{factor.answer}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{factor.detail}</p>
+                </article>
               ))}
             </div>
 

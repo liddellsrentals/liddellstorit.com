@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { siteConfig } from '@/lib/site-content'
+import { contentFreshnessDate, siteConfig } from '@/lib/site-content'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { JsonLd } from '@/components/json-ld'
 import { buildPortableStorageProductSchema } from '@/lib/seo'
@@ -12,17 +12,37 @@ export const metadata: Metadata = {
   description: 'Step-by-step guidance for packing a portable storage container safely and efficiently.',
 }
 
-const updatedAt = '2026-04-17'
+const updatedAt = contentFreshnessDate
 
 const formatMonthYear = (value: string) =>
   new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
 
 const steps = [
-  'Start with the heaviest items on the floor and toward the back of the container.',
-  'Build stable rows with furniture and large boxes, then fill gaps with smaller boxes or soft items.',
-  'Keep a clear aisle if you expect to access items during the rental period.',
-  'Wrap fragile items in padding and avoid stacking weight on top of them.',
-  'Place frequently needed items near the door so you do not have to unpack everything to reach them.',
+  {
+    question: 'What is the best order for loading a storage container?',
+    answer: 'Start with the heaviest items on the floor and against the back wall.',
+    detail: 'That gives you a stable base and makes it easier to build a secure stack as you move toward the door.',
+  },
+  {
+    question: 'How do you keep boxes and furniture from shifting?',
+    answer: 'Build tight rows and fill gaps with smaller boxes, pillows, or soft goods.',
+    detail: 'When everything fits snugly, the load is less likely to slide around during transport or while the container sits on-site.',
+  },
+  {
+    question: 'Should you leave a path inside the container?',
+    answer: 'Yes, keep a narrow aisle if you will need access before the rental ends.',
+    detail: 'A clear walkway saves time later because you do not have to unload the entire container to reach one item.',
+  },
+  {
+    question: 'How should you pack fragile items?',
+    answer: 'Wrap them well and keep them out of the main stacking line.',
+    detail: 'Fragile pieces do best on top of sturdier items or in marked boxes that will not take weight from heavier furniture.',
+  },
+  {
+    question: 'Where should the things you use most go?',
+    answer: 'Place them near the door so they are easy to grab.',
+    detail: 'That way you can access daily-use items without breaking down the entire stack when you need something quickly.',
+  },
 ]
 
 export default function PackingGuidePage() {
@@ -43,16 +63,18 @@ export default function PackingGuidePage() {
             <p className="text-sm uppercase tracking-wide text-accent font-medium mb-4">Guide</p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-foreground text-balance">How to pack a storage container</h1>
             <p className="mt-3 text-xs uppercase tracking-wide text-accent">Last updated: {formatMonthYear(updatedAt)}</p>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
-              Good packing keeps items safe and makes the container easier to use. The goal is to stack securely, protect fragile belongings, and preserve access to the things you may need first.
-            </p>
+              <p className="mt-5 text-muted-foreground leading-relaxed">
+                Good packing keeps items safe and makes the container easier to use. The goal is to stack securely, protect fragile belongings, and keep the things you need first easy to reach.
+              </p>
 
             <div className="mt-10 space-y-4">
               {steps.map((step, index) => (
-                <div key={step} className="rounded-lg border border-border bg-card p-5">
+                <section key={step.question} className="rounded-lg border border-border bg-card p-5">
                   <p className="text-sm font-medium text-accent">Step {index + 1}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-foreground">{step}</p>
-                </div>
+                  <h2 className="mt-2 text-lg font-medium text-foreground">{step.question}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground">{step.answer}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.detail}</p>
+                </section>
               ))}
             </div>
 
