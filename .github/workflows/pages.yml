@@ -30,6 +30,9 @@ jobs:
       - name: Build site
         run: bun run build
 
+      - name: Validate SEO output
+        run: bun run seo:check
+
       - name: Prepare Pages artifact
         run: |
           cp public/CNAME out/CNAME
@@ -50,3 +53,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Checkout IndexNow submission script
+        uses: actions/checkout@v4
+
+      - name: Submit deployed URLs to IndexNow
+        run: node scripts/submit-indexnow.mjs

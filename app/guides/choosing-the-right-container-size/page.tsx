@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Choosing the Right Container Size | Liddell Stor-It',
   description: 'Learn how to estimate the portable storage container size you need for a move, renovation, or business project.',
+  alternates: { canonical: '/guides/choosing-the-right-container-size/' },
 }
 
 const updatedAt = contentFreshnessDate

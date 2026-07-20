@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { contentFreshnessDate, guides, serviceAreas, siteConfig } from '@/lib/site-content'
+import { contentFreshnessDate, guides, serviceAreas } from '@/lib/site-content'
+import { buildSiteUrl } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 
@@ -8,35 +9,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: siteConfig.url,
+      url: buildSiteUrl(),
       lastModified: freshnessDate,
     },
     {
-      url: `${siteConfig.url}/faq`,
+      url: buildSiteUrl('/faq/'),
       lastModified: freshnessDate,
     },
     {
-      url: `${siteConfig.url}/container-quality-standards`,
+      url: buildSiteUrl('/container-quality-standards/'),
       lastModified: freshnessDate,
     },
     {
-      url: `${siteConfig.url}/storage-demo`,
+      url: buildSiteUrl('/storage-demo/'),
       lastModified: freshnessDate,
     },
     {
-      url: `${siteConfig.url}/guides`,
+      url: buildSiteUrl('/guides/'),
       lastModified: freshnessDate,
     },
     ...guides.map((guide) => ({
-      url: `${siteConfig.url}/guides/${guide.slug}`,
+      url: buildSiteUrl(`/guides/${guide.slug}/`),
       lastModified: new Date(guide.updatedAt),
     })),
     {
-      url: `${siteConfig.url}/service-areas`,
+      url: buildSiteUrl('/service-areas/'),
       lastModified: freshnessDate,
     },
     ...serviceAreas.map((area) => ({
-      url: `${siteConfig.url}/service-areas/${area.slug}/`,
+      url: buildSiteUrl(`/service-areas/${area.slug}/`),
       lastModified: freshnessDate,
     })),
   ]

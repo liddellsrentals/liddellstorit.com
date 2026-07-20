@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'How to Protect Furniture During a Remodel | Liddell Stor-It',
   description: 'How to protect furniture during a remodel and keep it safe in storage.',
+  alternates: { canonical: '/guides/renovation-planning/how-to-protect-furniture-during-remodel/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))

@@ -42,6 +42,9 @@ export async function generateMetadata({ params }: ServiceAreaPageProps): Promis
   return {
     title: `${area.title} | Liddell Stor-It`,
     description: area.description,
+    alternates: {
+      canonical: `/service-areas/${area.slug}/`,
+    },
   }
 }
 

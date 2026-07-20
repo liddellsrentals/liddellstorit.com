@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Storage Container Pricing | Liddell Stor-It',
   description: 'What affects portable storage container pricing and how to compare quotes with confidence.',
+  alternates: { canonical: '/guides/storage-container-pricing/' },
 }
 
 const updatedAt = contentFreshnessDate

@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Renovation Planning | Liddell Stor-It',
   description: 'Renovation planning advice for protecting furniture, staging rooms, and keeping remodels on schedule.',
+  alternates: { canonical: '/guides/renovation-planning/' },
 }
 
 const formatMonthYear = (value: string) =>

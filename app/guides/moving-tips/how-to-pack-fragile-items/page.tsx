@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'How to Pack Fragile Items | Liddell Stor-It',
   description: 'Practical steps for packing fragile items so they stay protected in storage.',
+  alternates: { canonical: '/guides/moving-tips/how-to-pack-fragile-items/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))

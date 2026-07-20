@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Decluttering by Room | Liddell Stor-It',
   description: 'A room-by-room decluttering approach that makes home organization easier.',
+  alternates: { canonical: '/guides/home-organization/decluttering-by-room/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))

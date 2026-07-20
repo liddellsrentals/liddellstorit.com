@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Contractor Staging Plan | Liddell Stor-It',
   description: 'How to stage rooms so contractors can work efficiently during a renovation.',
+  alternates: { canonical: '/guides/renovation-planning/contractor-staging-plan/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))

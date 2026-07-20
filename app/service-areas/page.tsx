@@ -14,6 +14,7 @@ const formatMonthYear = (value: string) =>
 export const metadata: Metadata = {
   title: 'Service Areas | Liddell Stor-It',
   description: 'Where Liddell Stor-It delivers portable storage containers across the Mid-South and Northeast Arkansas.',
+  alternates: { canonical: '/service-areas/' },
 }
 
 export default function ServiceAreasPage() {

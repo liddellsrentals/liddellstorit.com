@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Home Organization | Liddell Stor-It',
   description: 'Home organization ideas for decluttering rooms, storing seasonal items, and creating more usable space.',
+  alternates: { canonical: '/guides/home-organization/' },
 }
 
 const formatMonthYear = (value: string) =>

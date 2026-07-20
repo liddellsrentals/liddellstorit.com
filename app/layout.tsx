@@ -12,9 +12,6 @@ export const metadata: Metadata = {
   description: 'Convenient portable storage containers delivered to your location in Paragould, Arkansas. Perfect for moving, renovation, or extra storage needs.',
   generator: 'v0.app',
   metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: '/',
-  },
   icons: {
     icon: [
       {
@@ -34,7 +31,7 @@ export default function RootLayout({
     '@type': 'LocalBusiness',
     name: siteConfig.parentName,
     alternateName: siteConfig.name,
-    url: siteConfig.url,
+    url: `${siteConfig.url}/`,
     telephone: `+1${siteConfig.phone}`,
     email: siteConfig.email,
     address: {
@@ -62,7 +59,7 @@ export default function RootLayout({
     provider: {
       '@type': 'LocalBusiness',
       name: siteConfig.parentName,
-      url: siteConfig.url,
+      url: `${siteConfig.url}/`,
     },
     areaServed: siteConfig.serviceArea,
     url: siteConfig.reserveUrl,

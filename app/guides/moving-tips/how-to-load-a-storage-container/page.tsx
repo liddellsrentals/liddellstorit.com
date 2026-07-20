@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'How to Load a Storage Container | Liddell Stor-It',
   description: 'Loading tips for balancing weight, protecting items, and leaving room where needed.',
+  alternates: { canonical: '/guides/moving-tips/how-to-load-a-storage-container/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))

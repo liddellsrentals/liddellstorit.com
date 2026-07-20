@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Garage Organization | Liddell Stor-It',
   description: 'Garage organization tips for sorting tools, seasonal items, and bulky storage overflow.',
+  alternates: { canonical: '/guides/home-organization/garage-organization/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))

@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Pre-Renovation Timeline | Liddell Stor-It',
   description: 'A pre-renovation timeline to help you clear rooms and reserve storage before remodeling starts.',
+  alternates: { canonical: '/guides/renovation-planning/pre-renovation-timeline/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))

@@ -5,6 +5,16 @@ export type BreadcrumbItem = {
   url: string
 }
 
+export function buildSiteUrl(path = '/') {
+  const url = new URL(path, `${siteConfig.url}/`)
+
+  if (url.origin === siteConfig.url && !url.pathname.endsWith('/')) {
+    url.pathname = `${url.pathname}/`
+  }
+
+  return url.toString()
+}
+
 export function buildBreadcrumbList(items: BreadcrumbItem[]) {
   return {
     '@context': 'https://schema.org',
@@ -13,7 +23,7 @@ export function buildBreadcrumbList(items: BreadcrumbItem[]) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.url,
+      item: buildSiteUrl(item.url),
     })),
   }
 }
@@ -29,7 +39,7 @@ export function buildPortableStorageProductSchema(pageUrl: string) {
       name: siteConfig.parentName,
     },
     category: 'Portable storage container',
-    url: pageUrl,
+    url: buildSiteUrl(pageUrl),
     additionalProperty: [
       {
         '@type': 'PropertyValue',

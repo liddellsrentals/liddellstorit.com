@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'How to Pack a Storage Container | Liddell Stor-It',
   description: 'Step-by-step guidance for packing a portable storage container safely and efficiently.',
+  alternates: { canonical: '/guides/how-to-pack-a-storage-container/' },
 }
 
 const updatedAt = contentFreshnessDate

@@ -15,6 +15,7 @@ const updatedAt = contentFreshnessDate
 export const metadata: Metadata = {
   title: 'Storage Guides | Liddell Stor-It',
   description: 'Helpful guides on packing, choosing a container size, and understanding portable storage pricing.',
+  alternates: { canonical: '/guides/' },
 }
 
 export default function GuidesPage() {

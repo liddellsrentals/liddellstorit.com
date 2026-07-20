@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Container Quality Standards | Liddell Stor-It',
   description: 'Inspection checklist and cleaning protocols for Liddell Stor-It container quality standards.',
+  alternates: { canonical: '/container-quality-standards/' },
 }
 
 const formatMonthYear = (value: string) =>

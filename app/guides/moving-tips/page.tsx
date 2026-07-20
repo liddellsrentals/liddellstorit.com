@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Moving Tips | Liddell Stor-It',
   description: 'Practical moving tips for planning ahead, packing efficiently, and keeping your move on track.',
+  alternates: { canonical: '/guides/moving-tips/' },
 }
 
 const formatMonthYear = (value: string) =>

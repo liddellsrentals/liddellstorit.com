@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Seasonal Storage | Liddell Stor-It',
   description: 'How to store seasonal items without cluttering your home year-round.',
+  alternates: { canonical: '/guides/home-organization/seasonal-storage/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))

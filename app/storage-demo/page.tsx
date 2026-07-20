@@ -16,6 +16,7 @@ const watchUrl = `https://www.youtube.com/watch?v=${videoId}`
 export const metadata: Metadata = {
   title: 'Storage Demo Video | Liddell Stor-It',
   description: videoDescription,
+  alternates: { canonical: '/storage-demo/' },
 }
 
 const formatMonthYear = (value: string) =>

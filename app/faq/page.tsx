@@ -15,6 +15,7 @@ const formatMonthYear = (value: string) =>
 export const metadata: Metadata = {
   title: 'FAQ | Liddell Stor-It',
   description: 'Answers to common questions about portable storage container sizes, delivery, pricing, and rental terms in Paragould, AR.',
+  alternates: { canonical: '/faq/' },
 }
 
 export default function FaqPage() {

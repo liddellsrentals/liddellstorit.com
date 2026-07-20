@@ -10,6 +10,7 @@ import { buildPortableStorageProductSchema } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Move-Day Checklist | Liddell Stor-It',
   description: 'A move-day checklist for the last 24 hours before moving day.',
+  alternates: { canonical: '/guides/moving-tips/move-day-checklist/' },
 }
 
 const formatMonthYear = (value: string) => new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(new Date(value))
