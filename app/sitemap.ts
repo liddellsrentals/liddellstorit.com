@@ -1,11 +1,12 @@
 import type { MetadataRoute } from 'next'
-import { contentFreshnessDate, guides, serviceAreas } from '@/lib/site-content'
+import { contentFreshnessDate, guides, serviceAreaFreshnessDate, serviceAreas } from '@/lib/site-content'
 import { buildSiteUrl } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const freshnessDate = new Date(contentFreshnessDate)
+  const serviceAreaDate = new Date(serviceAreaFreshnessDate)
 
   return [
     {
@@ -34,11 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     {
       url: buildSiteUrl('/service-areas/'),
-      lastModified: freshnessDate,
+      lastModified: serviceAreaDate,
     },
     ...serviceAreas.map((area) => ({
       url: buildSiteUrl(`/service-areas/${area.slug}/`),
-      lastModified: freshnessDate,
+      lastModified: serviceAreaDate,
     })),
   ]
 }
